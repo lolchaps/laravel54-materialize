@@ -22,61 +22,105 @@
 </head>
 <body>
     <div id="app">
-        <nav>
-            <div class="container nav-wrapper">
-                <!-- Branding Image -->
-                <a href="{{ url('/') }}" class="brand-logo">
-                    {{ config('app.name', 'Laravel') }}
-                </a>
 
-                <!-- Collapsed Hamburger -->
-                <a href="#" data-activates="mobile-demo" class="button-collapse">
-                    <i class="material-icons">menu</i>
-                </a>
+        <header>
+            <div class="navbar-fixed">
+                <nav>
+                    <div class="nav-wrapper">
+                        <!-- Branding Image -->
+                        <a href="{{ url('/') }}" class="brand-logo">
+                            {{ config('app.name', 'Laravel') }}
+                        </a>
 
-                <!-- Right Side Of Navbar -->
-                <ul class="right hide-on-med-and-down">
-                    <!-- Authentication Links -->
-                    @if (Auth::guest())
-                        <li><a href="{{ route('login') }}">Login</a></li>
-                        <li><a href="{{ route('register') }}">Register</a></li>
-                    @else
-                        <!-- Dropdown Trigger -->
-                        <li>
-                            <a class="dropdown-button" href="#!" data-activates="dropdown">
-                                {{ Auth::user()->name }}
-                                <i class="material-icons right">arrow_drop_down</i>
-                            </a>
-                        </li>
+                        <!-- Collapsed Hamburger -->
+                        <a href="#" data-activates="mobile-demo" class="button-collapse">
+                            <i class="material-icons">menu</i>
+                        </a>
 
-                        <!-- Dropdown Structure -->
-                        <ul id="dropdown" class="dropdown-content">
+                        <!-- Right Side Of Navbar -->
+                        <ul class="right hide-on-med-and-down">
+                            <!-- Authentication Links -->
+                            @if (Auth::guest())
+                                <li><a href="{{ route('login') }}">Login</a></li>
+                                <li><a href="{{ route('register') }}">Register</a></li>
+                            @else
+                                <!-- Dropdown Trigger -->
+                                <li>
+                                    <a class="dropdown-button" href="#!" data-activates="dropdown">
+                                        {{ Auth::user()->name }}
+                                        <i class="material-icons right">arrow_drop_down</i>
+                                    </a>
+                                </li>
+
+                                <!-- Dropdown Structure -->
+                                <ul id="dropdown" class="dropdown-content">
+                                    <li>
+                                        <a href="#!">Settings</a>
+                                    </li>
+                                    <li class="divider"></li>
+                                    <li>
+                                        <a href="{{ route('logout') }}"
+                                            onclick="event.preventDefault();
+                                                     document.getElementById('logout-form').submit();">
+                                            Logout
+                                        </a>
+
+                                        <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                            {{ csrf_field() }}
+                                        </form>
+                                    </li>
+                                </ul>
+                            @endif
+                        </ul>
+
+                        <ul class="side-nav" id="mobile-demo">
+                            <li><a href="{{ url('home') }}">Home</a></li>
+                        </ul>
+                    </div>
+                </nav>
+            </div>
+        </header>
+
+        <main>
+            <aside>
+                <ul id="slide-out" class="side-nav fixed">
+                    <li>
+                        <a href="#" class="waves-effect waves-cyan">
+                            <i class="material-icons">dashboard</i> Dashboard
+                        </a>
+                    </li>
+
+                    <li>
+                        <ul class="collapsible collapsible-accordion">
                             <li>
-                                <a href="#!">Settings</a>
-                            </li>
-                            <li class="divider"></li>
-                            <li>
-                                <a href="{{ route('logout') }}"
-                                    onclick="event.preventDefault();
-                                             document.getElementById('logout-form').submit();">
-                                    Logout
+                                <a class="collapsible-header waves-effect waves-cyan">
+                                    <i class="material-icons">contacts</i> Users
                                 </a>
-
-                                <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-                                    {{ csrf_field() }}
-                                </form>
+                                <div class="collapsible-body">
+                                    <ul>
+                                        <li>
+                                            <a href="#">Users</a>
+                                        </li>
+                                        <li>
+                                            <a href="#">Create User</a>
+                                        </li>
+                                    </ul>
+                                </div>
                             </li>
                         </ul>
-                    @endif
+                    </li>
                 </ul>
+                <a href="#" data-activates="slide-out" class="button-collapse">
+                    <i class="material-icons">menu</i>
+                </a>
+            </aside>
+        </main>
 
-                <ul class="side-nav" id="mobile-demo">
-                    <li><a href="{{ url('home') }}">Home</a></li>
-                </ul>
-            </div>
-        </nav>
+        <footer>
+            
+        </footer>
 
-        @yield('content')
+        {{-- @yield('content') --}}
     </div>
 
     <!-- Scripts -->
