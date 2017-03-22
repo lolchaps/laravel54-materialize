@@ -5,6 +5,25 @@
 // Materialize
 @import "node_modules/materialize-css/sass/materialize";
 
+@media only screen and (min-width: 993px) {
+    .container {
+        width: 98%;
+    }
+}
+
+@media only screen and (min-width: 601px) {
+    .container {
+        width: 98%;
+    }
+}
+
+.container {
+    padding: 0 0.5rem;
+    margin: 0 auto;
+    max-width: 100% !important;
+    width: 98%;
+}
+
 main, footer {
   padding-left: 240px;
 }
@@ -15,8 +34,24 @@ main, footer {
   }
 }
 
+header .brand-logo {
+    padding: 0px 0px 0px 15px;
+}
+
 ul.side-nav {
     top: 64px;
+}
+
+@media only screen and (max-width: 992px) {
+    ul.side-nav {
+        top: 64px !important;
+    }
+}
+
+@media only screen and (max-width: 601px) {
+    ul.side-nav {
+        top: 56px !important;
+    }
 }
 
 .side-nav li > a {
@@ -41,4 +76,43 @@ ul.side-nav {
     float: right;
     color: #9e9e9e;
     font-size: 18px;
+}
+
+.breadcrumb {
+    font-size: 13px;
+    padding: 0;
+    margin: 0;
+    background: 0 0;
+}
+
+.breadcrumb>li {
+    line-height: 28px;
+}
+
+.breadcrumb>li {
+    display: inline-block;
+}
+
+.breadcrumb>li a {
+    color: #333;
+}
+
+.breadcrumb>.active {
+    color: #777;
+}
+
+.breadcrumb>li+li:before {
+    padding: 0 5px;
+    color: #ccc;
+    content: "/\00a0";
+}
+
+.page-header {
+    font-size: 24px;
+}
+
+h1 small, h2 small, h3 small, h4 small, h5 small, h6 small {
+    font-size: 60%;
+    font-weight: 300;
+    color: #7c7f83;
 }

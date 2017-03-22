@@ -20,12 +20,12 @@
         ]) !!};
     </script>
 </head>
-<body>
+<body class="grey lighten-4">
     <div id="app">
 
         <header>
             <div class="navbar-fixed">
-                <nav>
+                <nav class="blue-grey darken-4">
                     <div class="nav-wrapper">
                         <!-- Branding Image -->
                         <a href="{{ url('/') }}" class="brand-logo">
@@ -33,7 +33,7 @@
                         </a>
 
                         <!-- Collapsed Hamburger -->
-                        <a href="#" data-activates="mobile-demo" class="button-collapse">
+                        <a href="#" data-activates="slide-out" class="button-collapse">
                             <i class="material-icons">menu</i>
                         </a>
 
@@ -72,10 +72,6 @@
                                 </ul>
                             @endif
                         </ul>
-
-                        <ul class="side-nav" id="mobile-demo">
-                            <li><a href="{{ url('home') }}">Home</a></li>
-                        </ul>
                     </div>
                 </nav>
             </div>
@@ -110,10 +106,23 @@
                         </ul>
                     </li>
                 </ul>
-                <a href="#" data-activates="slide-out" class="button-collapse">
-                    <i class="material-icons">menu</i>
-                </a>
+                
             </aside>
+
+            <section class="container">
+                <ol class="breadcrumb right">
+                    <li><a href="#">Dashboard</a></li>
+                    <li class="active">Users</li>
+                </ol>
+
+                <h1 class="page-header">Users <small>list of users</small></h1>
+
+                <div class="card-panel">
+                    <span>I am a very simple card. I am good at containing small bits of information.
+                    I am convenient because I require little markup to use effectively. I am similar to what is called a panel in other frameworks.
+                    </span>
+                </div>
+            </section>
         </main>
 
         <footer>
