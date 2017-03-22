@@ -72,7 +72,7 @@ ul.side-nav {
 
 .collapsible-header:after {
     font-family: "Material Icons";
-    content: "\E315";
+    content: "\E5CF";
     float: right;
     color: #9e9e9e;
     font-size: 18px;
@@ -115,4 +115,27 @@ h1 small, h2 small, h3 small, h4 small, h5 small, h6 small {
     font-size: 60%;
     font-weight: 300;
     color: #7c7f83;
+}
+
+.notification-badge {
+    position: relative;
+    top: -20px;
+    color: #ffffff;
+    background-color: #FF4081;
+    margin: 0 -.5em;
+    border-radius: 50%;
+    padding: 2px 5px;
+}
+
+.social-notifications:before {
+    font-family: "Material Icons";
+    content: "\E7F4";
+}
+
+.notification-badge .notification-caption {
+    padding: 0px 3px 0px 0px;
+}
+
+small {
+    font-size: 0.8rem;
 }

@@ -33,7 +33,7 @@
                         </a>
 
                         <!-- Collapsed Hamburger -->
-                        <a href="#" data-activates="slide-out" class="button-collapse">
+                        <a href="javascript:void(0);" data-activates="slide-out" class="button-collapse">
                             <i class="material-icons">menu</i>
                         </a>
 
@@ -46,7 +46,26 @@
                             @else
                                 <!-- Dropdown Trigger -->
                                 <li>
-                                    <a class="dropdown-button" href="#!" data-activates="dropdown">
+                                    <a class="notification-button" href="javascript:void(0);" data-activates="notifications-dropdown">
+                                        <i class="social-notifications">
+                                            <small class="notification-badge">
+                                                <span class="notification-caption">5</span>
+                                            </small>
+                                        </i>
+                                    </a>
+                                </li>
+                                
+                                <!-- Dropdown Structure -->
+                                <ul id="notifications-dropdown" class="dropdown-content">
+                                    <li>
+                                        <a href="javascript:void(0);">Notifications</a>
+                                    </li>
+                                    <li class="divider"></li>
+                                </ul>
+
+                                <!-- Dropdown Trigger -->
+                                <li>
+                                    <a class="dropdown-button" href="javascript:void(0);" data-activates="dropdown">
                                         {{ Auth::user()->name }}
                                         <i class="material-icons right">arrow_drop_down</i>
                                     </a>
@@ -55,7 +74,7 @@
                                 <!-- Dropdown Structure -->
                                 <ul id="dropdown" class="dropdown-content">
                                     <li>
-                                        <a href="#!">Settings</a>
+                                        <a href="javascript:void(0);">Settings</a>
                                     </li>
                                     <li class="divider"></li>
                                     <li>
@@ -81,7 +100,7 @@
             <aside>
                 <ul id="slide-out" class="side-nav fixed">
                     <li>
-                        <a href="#" class="waves-effect waves-cyan">
+                        <a href="javascript:void(0);" class="waves-effect waves-cyan">
                             <i class="material-icons">dashboard</i> Dashboard
                         </a>
                     </li>
@@ -90,15 +109,15 @@
                         <ul class="collapsible collapsible-accordion">
                             <li>
                                 <a class="collapsible-header waves-effect waves-cyan">
-                                    <i class="material-icons">contacts</i> Users
+                                    <i class="material-icons">people</i> Users
                                 </a>
                                 <div class="collapsible-body">
                                     <ul>
                                         <li>
-                                            <a href="#">Users</a>
+                                            <a href="javascript:void(0);">Users</a>
                                         </li>
                                         <li>
-                                            <a href="#">Create User</a>
+                                            <a href="javascript:void(0);">Create User</a>
                                         </li>
                                     </ul>
                                 </div>
@@ -111,7 +130,7 @@
 
             <section class="container">
                 <ol class="breadcrumb right">
-                    <li><a href="#">Dashboard</a></li>
+                    <li><a href="javascript:void(0);">Dashboard</a></li>
                     <li class="active">Users</li>
                 </ol>
 
@@ -145,6 +164,16 @@
               gutter: 0, // Spacing from edge
               belowOrigin: true, // Displays dropdown below the button
               alignment: 'left', // Displays dropdown with edge aligned to the left of button
+              stopPropagation: false // Stops event propagation
+            });
+            $('.notification-button').dropdown({
+              inDuration: 300,
+              outDuration: 225,
+              constrainWidth: false, // Does not change width of dropdown to that of the activator
+              hover: true,
+              gutter: 0, // Spacing from edge
+              belowOrigin: true, // Displays dropdown below the button
+              alignment: 'right', // Displays dropdown with edge aligned to the left of button
               stopPropagation: false // Stops event propagation
             });
         })
